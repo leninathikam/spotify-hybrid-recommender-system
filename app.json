@@ -1,0 +1,17 @@
+{
+  "name": "spotify-hybrid-recommender-system",
+  "description": "A Streamlit app that recommends songs with content-based and hybrid filtering.",
+  "repository": "https://github.com/leninathikam/spotify-hybrid-recommender-system",
+  "keywords": [
+    "python",
+    "streamlit",
+    "music",
+    "recommendation",
+    "heroku"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}

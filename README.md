@@ -88,3 +88,28 @@ Notes:
 - This repository already includes the smaller generated artifacts needed for startup.
 - If you remove those artifacts and want to rebuild them, you will need the raw dataset files locally.
 - This app is better suited to Render or Streamlit Community Cloud than Netlify or Vercel because it needs a long-running Python web process, not only serverless functions.
+
+### Heroku
+
+This repository is now set up for Heroku with:
+
+- `Procfile` for the Streamlit web process
+- `.python-version` set to `3.12`
+- `app.json` for app metadata
+- `.slugignore` to keep the deploy slug smaller
+
+Deploy steps:
+
+```bash
+heroku login
+heroku create your-app-name
+git push heroku master
+heroku open
+```
+
+Useful commands:
+
+```bash
+heroku logs --tail --app your-app-name
+heroku ps --app your-app-name
+```
