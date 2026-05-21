@@ -19,11 +19,11 @@ def filter_songs_data(songs_data: pd.DataFrame, track_ids: list, save_df_path: s
     Filter the songs data for the given track ids
     """
     # filter data based on track_ids
-    filtered_data = songs_data[songs_data["track_id"].isin(track_ids)]
-    # sort the data by track id
-    filtered_data.sort_values(by="track_id", inplace=True)
-    # rest index
-    filtered_data.reset_index(drop=True, inplace=True)
+    filtered_data = (
+        songs_data.loc[songs_data["track_id"].isin(track_ids)]
+        .sort_values(by="track_id")
+        .reset_index(drop=True)
+    )
     # save the data
     save_pandas_data_to_csv(filtered_data, save_df_path)
     
